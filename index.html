@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Portfolio — Full-Stack Developer in Training</title>
+    <meta name="description" content="Demo portfolio showing projects, skills, and contact information for a developer learning full-stack web development. Built with semantic HTML and accessibility best practices.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+            <nav id="primary-navigation" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container" role="main">
+        <!-- About Me -->
+        <section id="about-me">
+            <h2>About Me</h2>
+            <p>I'm learning to become a full-stack developer. I build responsive, accessible web interfaces and am expanding my skills across back-end technologies, databases, and deployment.</p>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <figure>
+                        <img src="" alt="Placeholder screenshot for Project One" />
+                        <figcaption>Project One — A brief description.</figcaption>
+                    </figure>
+                    <h3>Project One</h3>
+                    <p>Short summary of the project, tech used, and outcome.</p>
+                </article>
+
+                <article class="project-card">
+                    <figure>
+                        <img src="" alt="Placeholder screenshot for Project Two" />
+                        <figcaption>Project Two — Placeholder</figcaption>
+                    </figure>
+                    <h3>Project Two</h3>
+                    <p>Short summary of the project, tech used, and outcome.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5 &amp; Semantic Markup</li>
+                <li>CSS3 (Flexbox, Grid)</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>Accessibility (a11y)</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="#" method="post" aria-label="Contact form">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Send message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" role="contentinfo">
+            <p>&copy; 2025 — Built as a demo portfolio</p>
+        </div>
+    </footer>
+    <script>
+        // Mobile navigation toggle
+        (function(){
+            const navToggle = document.querySelector('.nav-toggle');
+            const nav = document.getElementById('primary-navigation');
+            if(!navToggle || !nav) return;
+            navToggle.addEventListener('click', function(){
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open');
+            });
+        })();
+    </script>
+</body>
+</html>

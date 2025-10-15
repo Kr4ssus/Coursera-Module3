@@ -1,0 +1,122 @@
+:root{
+    --bg: #ffffff;
+    --text: #0b0b0b;
+    --link: #1a73e8;
+    --accent: #0b5fff;
+    --focus: #ffbf47;
+}
+
+html, body{
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container layout */
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Skip link (visible on focus) */
+.skip-link{
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus{
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: .5rem .75rem;
+    background: var(--accent);
+    color: #fff;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+/* Navigation */
+nav ul{ list-style:none; padding:0; margin:0; display:flex; gap:1rem; align-items:center; }
+nav a{ color:var(--link); text-decoration:none; font-weight:600; }
+
+/* Header and nav layout */
+header{ background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%); border-bottom:1px solid #eef2ff; }
+header .container{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+
+.nav-toggle{ display:none; background:transparent; border:0; padding:.5rem; cursor:pointer; }
+.hamburger{ display:block; width:24px; height:2px; background:var(--text); position:relative; }
+.hamburger::before, .hamburger::after{ content:''; position:absolute; left:0; right:0; height:2px; background:var(--text); }
+.hamburger::before{ top:-7px; }
+.hamburger::after{ top:7px; }
+
+/* About Me styling */
+#about-me{ margin:1.5rem 0; }
+#about-me p{ max-width:60ch; font-size:1.05rem; }
+
+/* Projects styling */
+.projects-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; align-items:start; }
+.project-card{ border:1px solid #e6e6e6; padding:1rem; border-radius:8px; background:#fff; box-shadow: 0 1px 2px rgba(10,10,10,0.03); }
+.project-card figure{ margin:0 0 .5rem 0; }
+.project-card h3{ margin-top:.25rem; margin-bottom:.5rem; font-size:1.05rem; }
+.project-card img{ display:block; width:100%; height:160px; object-fit:cover; background:#f4f4f4; border-radius:4px; }
+
+/* Skills styling with icons */
+#skills ul{ list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.5rem; }
+#skills li{ background:#f4f6ff; padding:.35rem .6rem; border-radius:999px; font-weight:500; display:inline-flex; align-items:center; }
+#skills li::before{ content:'▹'; color:var(--accent); margin-right:.5rem; font-size:.9rem; }
+
+/* Contact form styling */
+form{ max-width:640px; }
+button[type="submit"]{ background:var(--accent); color:#fff; border:0; padding:.6rem 1rem; border-radius:6px; cursor:pointer; }
+
+/* Ensure images and video are responsive */
+img, video{ max-width:100%; height:auto; }
+
+/* Focus styles to aid keyboard users */
+a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Ensure links/buttons have sufficient color contrast */
+a, button{ color:var(--link); }
+
+/* Accessible form layout */
+form div{ margin-bottom: .75rem; }
+label{ display:block; margin-bottom:.25rem; }
+input, textarea{ width:100%; padding:.5rem; border:1px solid #cfcfcf; border-radius:4px; }
+
+/* Footer */
+footer{ margin-top:2rem; padding-top:1rem; border-top:1px solid #eee; }
+
+/* Responsive - breakpoint at 768px */
+@media (max-width:768px){
+    .container{ padding: .75rem; }
+    .nav-toggle{ display:inline-block; }
+    /* Hide nav by default on small screens, show when .open is present */
+    #primary-navigation{ display:none; }
+    #primary-navigation.open{ display:block; }
+    #primary-navigation ul{ flex-direction:column; gap:.75rem; }
+    .projects-grid{ grid-template-columns: 1fr; }
+}
+
+/* Small screens fallback */
+@media (max-width:480px){
+    nav ul{ flex-direction:column; gap:.5rem; }
+}
+
+/* Vendor-prefixed fallbacks for older browsers */
+nav ul{ display:-webkit-box; display:-ms-flexbox; display:flex; }
+.projects-grid{ display:-ms-grid; display:grid; }
+
+
