@@ -119,4 +119,16 @@ footer{ margin-top:2rem; padding-top:1rem; border-top:1px solid #eee; }
 nav ul{ display:-webkit-box; display:-ms-flexbox; display:flex; }
 .projects-grid{ display:-ms-grid; display:grid; }
 
+/* Lightbox/modal styles */
+.lightbox-modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:2000; }
+.lightbox-modal.open{ display:flex; }
+.lightbox-backdrop{ position:fixed; inset:0; background:rgba(0,0,0,0.6); }
+.lightbox-content{ position:relative; max-width:90%; max-height:90%; padding:1rem; background:#fff; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:2001; overflow:auto; }
+.lightbox-content img{ max-width:100%; height:auto; display:block; margin:0 auto 0.5rem; }
+.lightbox-close{ position:absolute; right:0.5rem; top:0.25rem; background:transparent; border:0; font-size:1.25rem; cursor:pointer; }
+
+/* Field error and submit message */
+.field-error{ color:#9b1c1c; font-size:.95rem; margin-top:.35rem; }
+.submit-message{ margin-top:1rem; padding:.6rem 1rem; background:#e6ffef; border:1px solid #c7f0da; border-radius:6px; }
+
 
